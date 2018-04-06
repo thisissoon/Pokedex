@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomeModule'
   },
   {
+    path: 'pokemon',
+    loadChildren: './pokemon/pokemon.module#PokemonModule'
+  },
+  {
     path: '**',
     redirectTo: ''
   }
