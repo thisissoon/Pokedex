@@ -20,6 +20,14 @@ This project also roughly follows [GitFlow](https://datasift.github.io/gitflow/I
 
 ### App structure
 
+The Angular CLI is used to it's fullist to generate project files (modules, components, service etc).
+
+The file and folder structure generally follow: reasource (e.g pokemon) > pages (list and detail) > nested components (pokemon name).
+
+This results in a folder for each resource (e.g pokemon). Within these folders there is one module, one routing module and as many components used exlusively by pages focused on that resource (e.g pokemon detail view, name and number components).
+
+Routed components (e.g pokemon detail) can house nested components in thier folders and will be used for data fetching and distributing.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
