@@ -9,6 +9,12 @@ import { pokemons } from '../pokemon-list/pokemon-list.mock-data';
 export class PokemonDetailComponent implements OnInit {
 
   pokemonLinks = pokemons;
+  pokemonName = {
+    name: 'squirtle'
+  };
+  pokemonNumber = {
+    number: '007'
+  };
 
   constructor() { }
 
