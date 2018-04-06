@@ -1,0 +1,10 @@
+<h2>Pokemon Detail</h2>
+<h3>Bio</h3>
+<app-pokemon-name
+  [name]="pokemonName?.name"
+></app-pokemon-name>
+<app-pokemon-number
+  [number]="pokemonNumber?.number"
+></app-pokemon-number>
+<h3>Other Pokemon</h3>
+<a *ngFor="let pokemon of pokemonLinks" [routerLink]="['/pokemon/' + pokemon?.id]">{{pokemon?.name}}</a>

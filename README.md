@@ -16,7 +16,17 @@ These tools were installed locally ([commitizen](https://github.com/commitizen/c
 
 This setup should make projects easier to approach for new team members.
 
-This project also roughly follows [GitFlow](https://datasift.github.io/gitflow/IntroducingGitFlow.html) although not a highlighted feature of this project 
+This project also roughly follows [GitFlow](https://datasift.github.io/gitflow/IntroducingGitFlow.html) although not a highlighted feature of this project.
+
+### App structure
+
+The Angular CLI is used to it's fullist to generate project files (modules, components, service etc).
+
+The file and folder structure generally follow: reasource (e.g pokemon) > pages (list and detail) > nested components (pokemon name).
+
+This results in a folder for each resource (e.g pokemon). Within these folders there is one module, one routing module and as many components used exlusively by pages focused on that resource (e.g pokemon detail view, name and number components).
+
+Routed components (e.g pokemon detail) can house nested components in thier folders and will be used for data fetching and distributing.
 
 ## Development server
 
