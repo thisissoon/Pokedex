@@ -16,7 +16,9 @@ These tools were installed locally ([commitizen](https://github.com/commitizen/c
 
 This setup should make projects easier to approach for new team members.
 
-This project also roughly follows [GitFlow](https://datasift.github.io/gitflow/IntroducingGitFlow.html) although not a highlighted feature of this project 
+This project also roughly follows [GitFlow](https://datasift.github.io/gitflow/IntroducingGitFlow.html) although not a highlighted feature of this project.
+
+### App structure
 
 ## Development server
 
