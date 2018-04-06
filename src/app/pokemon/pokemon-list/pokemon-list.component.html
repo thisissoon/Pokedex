@@ -1,0 +1,5 @@
+<h2>Pokemon List</h2>
+
+<div class="secondary-nav">
+  <a *ngFor="let pokemon of pokemons" [routerLink]="['/pokemon/' + pokemon?.id]">{{pokemon?.name}}</a>
+</div>
