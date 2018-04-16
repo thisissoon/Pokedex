@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/thisissoon/Pokedex/compare/v0.2.0...v0.3.0) (2018-04-16)
+
+
+### Features
+
+* **server side rendering:** Add browser app module ([90978fe](https://github.com/thisissoon/Pokedex/commit/90978fe))
+* **server side rendering:** Add condig for server side to angular cli config ([c3c429c](https://github.com/thisissoon/Pokedex/commit/c3c429c))
+* **server side rendering:** Add server transition to client side app and console logs to demonstrat ([7bf5d2f](https://github.com/thisissoon/Pokedex/commit/7bf5d2f))
+* **server side rendering:** Add ts config for angular cli for server side rendered app ([8b40b23](https://github.com/thisissoon/Pokedex/commit/8b40b23))
+* **server side rendering:** angular entry point and bootstrap module for server side rendered app ([d63a8fe](https://github.com/thisissoon/Pokedex/commit/d63a8fe))
+* **server side rendering:** Create express server which uses angular as a templating engine to resp ([a7268f0](https://github.com/thisissoon/Pokedex/commit/a7268f0))
+* **server side rendering:** create webpack config to bundle Create webpack config to bundle express ([0af783b](https://github.com/thisissoon/Pokedex/commit/0af783b))
+* **server side rendering:** Disable initial client side navigation ([251d628](https://github.com/thisissoon/Pokedex/commit/251d628))
+* **server side rendering:** Install universal packages and add ssr scripts ([a696944](https://github.com/thisissoon/Pokedex/commit/a696944))
+* **server side rendering:** Update README ([fc50aec](https://github.com/thisissoon/Pokedex/commit/fc50aec))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/thisissoon/Pokedex/compare/v0.1.0...v0.2.0) (2018-04-06)
 

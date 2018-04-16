@@ -10,7 +10,7 @@ This project also includes extensive comments to help explain what each section 
 
 ### Change docs
 
-[Commitizen CLI](https://github.com/commitizen/cz-cli) used to enforce commit message structure and [conventional changeload standard version](https://github.com/conventional-changelog/standard-version) used to bump versions and auto generate a meaningful changelog.
+[Commitizen CLI](https://github.com/commitizen/cz-cli) used to enforce commit message structure and [conventional changelog standard version](https://github.com/conventional-changelog/standard-version) used to bump versions and auto generate a meaningful changelog.
 
 These tools were installed locally ([commitizen](https://github.com/commitizen/cz-cli#optional-install-and-run-commitizen-locally), [standard-version](https://github.com/conventional-changelog/standard-version)) and are executed via npm scripts.
 
@@ -27,6 +27,22 @@ The file and folder structure generally follow: reasource (e.g pokemon) > pages 
 This results in a folder for each resource (e.g pokemon). Within these folders there is one module, one routing module and as many components used exlusively by pages focused on that resource (e.g pokemon detail view, name and number components).
 
 Routed components (e.g pokemon detail) can house nested components in thier folders and will be used for data fetching and distributing.
+
+### Server side rendering (SSR)
+
+Server side rendering is where a client requests a route and the related view is rendered on the server (as opposed to by the client) and returned as the server's response.
+
+This is achieved by creating an express webserver and using an Angular templating engine which takes a route and a bundled Angular application and returns a rendered view.
+
+For the most part [this guide](https://angular.io/guide/universal) can be followed (and referred to for more detail), however this project has implemented server side rendering slightly differently:
+
+1. Install tsloader v3.5.0 to avoid errors.
+2. No need to edit services.
+3. An `AppBrowserModule` is used and bootstrapped in main.ts.
+4. `initialNavigation` disabled in `AppRoutingModule` to prevent body of app refreshing when client takes over from a server rendered view.
+5. Npm scripts renamed from `universal` to `ssr`.
+
+Once the above is completed `npm run build:ssr` and `npm run serve:ssr` can be run and when `http://localhost:4000/` is visited the initial request in chrome dev tools should contain a fully rendered HTML page as opposed to a pre Angular bootstrap one.
 
 ## Development server
 
