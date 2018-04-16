@@ -1,12 +1,12 @@
 # Pokedex
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4 and created to demonstrate implementations of a few recently encountered techonlogies.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4 and created to demonstrate implementations of a few recently encountered technologies.
 
 ## Features
 
 Following section titles can be used to search commit history for changes specific to each feature.
 
-This project also includes extensive comments to help explain what each section of code does and how they relate to each of the below features.
+This project also includes comments to help explain what some sections of code do and how they relate to each of the below features.
 
 ### Change docs
 
@@ -20,29 +20,39 @@ This project also roughly follows [GitFlow](https://datasift.github.io/gitflow/I
 
 ### App structure
 
-The Angular CLI is used to it's fullist to generate project files (modules, components, service etc).
+The Angular CLI is used to it's fullest to generate project files (modules, components, service etc).
 
-The file and folder structure generally follow: reasource (e.g pokemon) > pages (list and detail) > nested components (pokemon name).
+The file and folder structure generally follow: resource (e.g Pokemon) > pages (list and detail) > nested components (Pokemon name).
 
-This results in a folder for each resource (e.g pokemon). Within these folders there is one module, one routing module and as many components used exlusively by pages focused on that resource (e.g pokemon detail view, name and number components).
+This results in a folder for each resource (e.g Pokemon). Within these folders there is one module, one routing module and as many components used exclusively by pages focused on that resource (e.g Pokemon detail view, name and number components).
 
-Routed components (e.g pokemon detail) can house nested components in thier folders and will be used for data fetching and distributing.
+Routed components (e.g Pokemon detail) can house nested components in their folders and will be used for data fetching and distributing.
 
 ### Server side rendering (SSR)
 
 Server side rendering is where a client requests a route and the related view is rendered on the server (as opposed to by the client) and returned as the server's response.
 
-This is achieved by creating an express webserver and using an Angular templating engine which takes a route and a bundled Angular application and returns a rendered view.
+This is achieved by creating an express web-server and using an Angular templating engine which takes a route and a bundled Angular application and returns a rendered view.
 
 For the most part [this guide](https://angular.io/guide/universal) can be followed (and referred to for more detail), however this project has implemented server side rendering slightly differently:
 
 1. Install tsloader v3.5.0 to avoid errors.
 2. No need to edit services.
-3. An `AppBrowserModule` is used and bootstrapped in main.ts.
+3. An `AppBrowserModule` is used and bootstrapped in `main.ts`.
 4. `initialNavigation` disabled in `AppRoutingModule` to prevent body of app refreshing when client takes over from a server rendered view.
 5. Npm scripts renamed from `universal` to `ssr`.
 
 Once the above is completed `npm run build:ssr` and `npm run serve:ssr` can be run and when `http://localhost:4000/` is visited the initial request in chrome dev tools should contain a fully rendered HTML page as opposed to a pre Angular bootstrap one.
+
+### GraphQL codegen (schema types, query autocompletion, query result types)
+
+It is possible to inspect a GraphQL endpoint for it's schema with [GraphQL CLI](https://github.com/graphql-cli/graphql-cli). This schema can then be used by [GraphQL for VScode](https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode) to lint and autocomplete [gql tagged](https://github.com/apollographql/graphql-tag) queries. Furthermore, given these correctly typed queries, it is possible to generate response types with [Apollo codegen](https://github.com/apollographql/apollo-codegen).
+
+1. Install [GraphQL for VScode](https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode) and copy this project's `.gqlconfig' to loosen the GraphQL linter.
+2. Run `npm i --save graphql-tag` and create fragments for each nested component and queries for each routed component (see this project's Pokemon fragments and queries)
+3. Use the GraphQL CLI to download GraphQL schema. Run `npm i --save-dev graphql-cli`, add `"schema:gql": "graphql get-schema -e https://graphql-pokemon.now.sh -o ./schema.graphql",` to your `package.json` and run `npm run schema:gql`. Remove all comments from the generated schema file.
+4. The GraphQL for VScode plugin should now provide some linting and autocompletion for gql tagged strings. If not, check `schema.graphql` from errors and restart VScode.
+5. Use Apollo codegen to create query response types based on an introspection schema and gql tagged strings.
 
 ## Development server
 
@@ -54,7 +64,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build` to build the project. The build artefacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 ## Further help
 
