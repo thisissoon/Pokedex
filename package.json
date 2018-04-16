@@ -1,6 +1,6 @@
 {
   "name": "pokedex",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -14,7 +14,11 @@
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "serve:ssr": "node dist/server.js",
     "build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
-    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
+    "schema:graphql": "graphql get-schema -e https://graphql-pokemon.now.sh -o ./schema.graphql",
+    "apollo:introspect": "apollo-codegen introspect-schema https://graphql-pokemon.now.sh --output schema.json",
+    "apollo:types": "apollo-codegen generate **/*.graphql.ts --schema schema.json --target typescript --output ./src/app/apollo/operation-result-types.ts",
+    "apollo:gen": "npm run apollo:introspect && npm run apollo:types"
   },
   "private": true,
   "dependencies": {
@@ -30,7 +34,9 @@
     "@angular/router": "^5.2.0",
     "@nguniversal/express-engine": "^5.0.0",
     "@nguniversal/module-map-ngfactory-loader": "^5.0.0",
+    "@playlyfe/gql": "^2.6.0",
     "core-js": "^2.4.1",
+    "graphql-tag": "^2.8.0",
     "rxjs": "^5.5.6",
     "ts-loader": "^3.5.0",
     "zone.js": "^0.8.19"
@@ -42,9 +48,11 @@
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "apollo-codegen": "^0.19.1",
     "codelyzer": "^4.0.1",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
+    "graphql-cli": "^2.15.9",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",

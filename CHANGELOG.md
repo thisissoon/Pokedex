@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/thisissoon/Pokedex/compare/v0.3.0...v0.4.0) (2018-04-16)
+
+
+### Features
+
+* **graphql codegen:** Config for graphql vscode plugin ([bff8cf1](https://github.com/thisissoon/Pokedex/commit/bff8cf1))
+* **graphql codegen:** Generate schema files ([f2cf981](https://github.com/thisissoon/Pokedex/commit/f2cf981))
+* **graphql codegen:** Install graphql code gen dependencies and add associated npm scripts ([eaafedc](https://github.com/thisissoon/Pokedex/commit/eaafedc))
+* **graphql codegen:** Write gql tagged graphql fragments and queries ([35fc44f](https://github.com/thisissoon/Pokedex/commit/35fc44f))
+* **graphql gen:** generate response types from schema info and gql tagged strings ([ffc9341](https://github.com/thisissoon/Pokedex/commit/ffc9341))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/thisissoon/Pokedex/compare/v0.2.0...v0.3.0) (2018-04-16)
 
