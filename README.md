@@ -10,7 +10,7 @@ This project also includes extensive comments to help explain what each section 
 
 ### Change docs
 
-[Commitizen CLI](https://github.com/commitizen/cz-cli) used to enforce commit message structure and [conventional changeload standard version](https://github.com/conventional-changelog/standard-version) used to bump versions and auto generate a meaningful changelog.
+[Commitizen CLI](https://github.com/commitizen/cz-cli) used to enforce commit message structure and [conventional changelog standard version](https://github.com/conventional-changelog/standard-version) used to bump versions and auto generate a meaningful changelog.
 
 These tools were installed locally ([commitizen](https://github.com/commitizen/cz-cli#optional-install-and-run-commitizen-locally), [standard-version](https://github.com/conventional-changelog/standard-version)) and are executed via npm scripts.
 
