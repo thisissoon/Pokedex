@@ -17,7 +17,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    // disbables initial refresh on page when client takes over from serverside app.
+    // if true user will experience a flash as app is refreshed on load.
+    RouterModule.forRoot(routes, { initialNavigation: false })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
