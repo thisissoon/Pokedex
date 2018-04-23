@@ -1,10 +1,17 @@
+<!-- data and loading state from routed component 
+  passed down to and dealt with by child components -->
+
 <h2>Pokemon Detail</h2>
 <h3>Bio</h3>
 <app-pokemon-name
+  [loading]="loading"
   [name]="pokemonName?.name"
 ></app-pokemon-name>
 <app-pokemon-number
+  [loading]="loading"
   [number]="pokemonNumber?.number"
 ></app-pokemon-number>
+<!-- direct links to other instances of same component  
+added to demonstrate Andgular life cycle hook behavior -->
 <h3>Other Pokemon</h3>
 <a *ngFor="let pokemon of pokemonLinks" [routerLink]="['/pokemon/' + pokemon?.id]">{{pokemon?.name}}</a>
