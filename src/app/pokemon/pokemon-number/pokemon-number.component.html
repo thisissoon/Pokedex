@@ -1,4 +1,8 @@
-<h4 class="number">
+<!-- posibility of page rendering without data
+taken care off with switch cases and styling -->
+
+<h4 class="number" [ngSwitch]="loading">
   <span>Number:</span>
-  <span>{{number}}</span>
+  <span class="loading" *ngSwitchCase="true">...</span>
+  <span *ngSwitchCase="false">{{number}}</span>
 </h4>
