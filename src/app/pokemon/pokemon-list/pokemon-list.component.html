@@ -1,5 +1,17 @@
+<!-- posibility of page rendering without data
+taken care off with switch cases and styling -->
+
 <h2>Pokemon List</h2>
 
-<div class="secondary-nav">
-  <a *ngFor="let pokemon of pokemons" [routerLink]="['/pokemon/' + pokemon?.id]">{{pokemon?.name}}</a>
+<div class="secondary-nav" [ngSwitch]="loading">
+
+  <div *ngSwitchCase="true">
+    <a class="loading" *ngFor="let pokemon of pokemons">...</a>
+  </div>
+
+  <div *ngSwitchCase="false">
+    <a *ngFor="let pokemon of pokemons" [routerLink]="['/pokemon/' + pokemon?.id]">
+      {{pokemon?.name}}</a>
+  </div>
+
 </div>

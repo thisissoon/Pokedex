@@ -9,7 +9,7 @@ export const fragmentPokemonLink = gql`
 
 export const pokemonListQuery = gql`
   query PokemonList {
-    pokemons (first: 4) {
+    pokemons (first: 3) {
       ...PokemonLink
     }
   }
