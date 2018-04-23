@@ -54,6 +54,16 @@ It is possible to inspect a GraphQL endpoint for it's schema with [GraphQL CLI](
 4. The GraphQL for VScode plugin should now provide some linting and autocompletion for gql tagged strings. If not, check `schema.graphql` from errors and restart VScode.
 5. Use Apollo codegen to create query response types based on an introspection schema and gql tagged strings.
 
+### Apollo
+
+For the most part [this guide](https://www.apollographql.com/docs/angular/basics/setup.html) was followed with the following deviations / enhancements:
+
+1. `"esnext.asynciterable"` added to the `lib` array in `tsconfig.json` to prevent the build from breaking after the required npm packages have been installed.
+2. Apollo client initialisation logic broken out into it's own service to allow for more control over when the client is initialised (import when pairing Apollo with an Angular `APP_INITIALIZER` for runtime configuration.
+3. `fetch-introspection-result-data.js` script used to introspect GraphQL endpoint to allow for more complex Apollo queries.
+4. Basic loading styling and logic has been implemented at component level as pages and components will render before data is present and to prevent loading states from flickering.
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
