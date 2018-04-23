@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { ApolloClientModule } from './apollo/apollo-client.module';
 
 
 @NgModule({
@@ -20,7 +21,10 @@ import { FooterComponent } from './footer/footer.component';
     // ensures the server rendered app can properly transitioned into a client app.
     // (e.g server styles and cache present in intial .html can be correctly tagged)
     BrowserModule.withServerTransition({appId: 'pokedex'}),
-    AppRoutingModule
+    AppRoutingModule,
+    // Provides the ApolloClientService, and hnece the apollo
+    // client instance to the entire app.
+    ApolloClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

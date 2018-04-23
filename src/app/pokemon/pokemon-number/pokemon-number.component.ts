@@ -9,6 +9,8 @@ export class PokemonNumberComponent implements OnInit {
 
   @Input()
   public number: number;
+  @Input()
+  public loading: boolean;
 
   constructor() { }
 
