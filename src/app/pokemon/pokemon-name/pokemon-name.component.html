@@ -1,4 +1,8 @@
-<h4 class="name">
+<!-- posibility of page rendering without data
+taken care off with switch cases and styling -->
+
+<h4 class="name" [ngSwitch]="loading">
   <span>Name:</span>
-  <span>{{name}}</span>
+  <span class="loading" *ngSwitchCase="true">...</span>
+  <span *ngSwitchCase="false">{{name}}</span>
 </h4>
