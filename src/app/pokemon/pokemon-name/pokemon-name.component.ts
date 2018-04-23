@@ -9,6 +9,8 @@ export class PokemonNameComponent implements OnInit {
 
   @Input()
   public name: string;
+  @Input()
+  public loading: boolean;
 
   constructor() { }
 

@@ -1,0 +1,16 @@
+@keyframes loading { 
+  0% {background-position-x: 0%;}
+  100% {background-position: -100%;}
+}
+
+.number {
+  .loading {
+    padding: 0 20px;
+    background-image: CornflowerBlue;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #5de8ff, #e7fbff, #5de8ff, #e7fbff, #5de8ff);
+    background-size: 200% 200%;
+    animation: loading 2s linear infinite;
+    opacity: 0.5;
+  }
+}
