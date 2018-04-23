@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/thisissoon/Pokedex/compare/v0.4.0...v0.5.0) (2018-04-23)
+
+
+### Features
+
+* **apollo:** add lib to ts config to prevent errors ([549a7f3](https://github.com/thisissoon/Pokedex/commit/549a7f3))
+* **apollo:** create apollo client service and apollo client module ([705fc11](https://github.com/thisissoon/Pokedex/commit/705fc11))
+* **apollo:** create script to gather introspection result data from graphql endpoint ([c6bf900](https://github.com/thisissoon/Pokedex/commit/c6bf900))
+* **apollo:** generate introspection query result data ([8f0f2d1](https://github.com/thisissoon/Pokedex/commit/8f0f2d1))
+* **apollo:** import apollo client module into app ([eedcceb](https://github.com/thisissoon/Pokedex/commit/eedcceb))
+* **apollo:** install required dependencies ([c821f47](https://github.com/thisissoon/Pokedex/commit/c821f47))
+* **apollo:** update pokemon detail component ([b1b6d22](https://github.com/thisissoon/Pokedex/commit/b1b6d22))
+* **apollo:** update pokemon list component ([7e1c486](https://github.com/thisissoon/Pokedex/commit/7e1c486))
+* **apollo:** update pokemon name component ([edbe8ed](https://github.com/thisissoon/Pokedex/commit/edbe8ed))
+* **apollo:** update pokemon number component ([d31835e](https://github.com/thisissoon/Pokedex/commit/d31835e))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/thisissoon/Pokedex/compare/v0.3.0...v0.4.0) (2018-04-16)
 
