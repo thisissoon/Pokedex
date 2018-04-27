@@ -20,7 +20,7 @@ const routes: Routes = [
   imports: [
     // disbables initial refresh on page when client takes over from serverside app.
     // if true user will experience a flash as app is refreshed on load.
-    RouterModule.forRoot(routes, { initialNavigation: false })
+    RouterModule.forRoot(routes, { initialNavigation: 'enabled' })
   ],
   exports: [RouterModule]
 })
