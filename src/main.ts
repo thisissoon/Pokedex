@@ -8,5 +8,10 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppBrowserModule)
-  .catch(err => console.log(err));
+// Delays bootstrap of app on browser until DOM fully loaded. Ensures transfer
+// state object at bottom of html pages is also loaded and can
+// be accessed by Angular / Apollo
+document.addEventListener('DOMContentLoaded', () => {
+  platformBrowserDynamic().bootstrapModule(AppBrowserModule)
+    .catch(err => console.log(err));
+});

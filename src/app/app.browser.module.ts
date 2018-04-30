@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
-    AppModule,
-    BrowserTransferStateModule
+    AppModule
+    // gives browser access to transfer state injection token however not required for this app.
+    // BrowserTransferStateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
