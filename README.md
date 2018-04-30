@@ -63,6 +63,14 @@ For the most part [this guide](https://www.apollographql.com/docs/angular/basics
 3. `fetch-introspection-result-data.js` script used to introspect GraphQL endpoint to allow for more complex Apollo queries.
 4. Basic loading styling and logic has been implemented at component level as pages and components will render before data is present and to prevent loading states from flickering.
 
+### State transfer
+
+Angular state transfer allows responses received by Angular to be stored in a key value object at the bottom of it's rendered html pages. This means responses received by Angular when running as a template engine on the server can be stored and used by Angular when that same route is run on the browser. This prevents duplicate requests (once on the server and again on the browser).
+
+1. Import `ServerTransferStateModule` into `AppServerModule`. This should result in an empty state object at the bottom of pages rendered by the server. Build, serve and inspect initial server html responses from the server to view the object. The Angular guide recommends to also import `BrowserTransferStateModule` however it doesn't seem to be required for this app.
+2. `npm i --save @nguniversal/common` and import `TransferHttpCacheModule` in app module to allow access to state in Angular application. [More info](https://github.com/angular/universal/tree/master/modules/common).
+3. In `ApolloClientService` either transfer Apollo cache to Angular state or Angular state to Apollo cache depending on wether on server or on browser. This will result in data being visible at bottom of ssr pages.
+4. Finally we need to ensure client app bootstraps after the DOM has loaded (and hence state at bottom of html docs). Add a `document.loaded` event listener in `main.ts` to achieve this.
 
 ## Development server
 
