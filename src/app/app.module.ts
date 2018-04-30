@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +25,12 @@ import { ApolloClientModule } from './apollo/apollo-client.module';
     AppRoutingModule,
     // Provides the ApolloClientService, and hnece the apollo
     // client instance to the entire app.
-    ApolloClientModule
+    ApolloClientModule,
+    // TransferHttpCacheModule installs a Http interceptor that
+    // avoids duplicate HttpClient requests on the client,
+    // for requests that were already made when the application
+    // was rendered on the server side.
+    TransferHttpCacheModule
   ],
   providers: [],
   bootstrap: [AppComponent]
