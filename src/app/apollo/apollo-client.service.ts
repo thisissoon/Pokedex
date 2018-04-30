@@ -12,6 +12,9 @@ export class ApolloClientService {
   cache: InMemoryCache;
   link: HttpLinkHandler;
   initialised = false;
+  // key to store value in state transfer object at bottom of SSR
+  // pages at bottom of doc.
+  STATE_KEY = makeStateKey<any>('apollo.state');
 
   constructor(
     private apolloAngular: Apollo,
@@ -38,7 +41,32 @@ export class ApolloClientService {
       ssrMode: true
     });
 
+    // App deemed to be running on browser if there is apollo data in the
+    // transfer state object.
+    const isBrowser = this.state.hasKey<NormalizedCache>(this.STATE_KEY);
+
+    if (isBrowser) {
+      this.onBrowser();
+    } else {
+      this.onServer();
+    }
+
     this.initialised = true;
+  }
+
+  onServer() {
+    // store apollo cache into angular state to be used
+    // by apollo when app runs on client
+    this.state.onSerialize(this.STATE_KEY, () =>
+      this.cache.extract()
+    );
+  }
+
+  onBrowser() {
+    // restore apollo cache from state stored when app was
+    // ran on server
+    const state = this.state.get<NormalizedCache>(this.STATE_KEY, null);
+    this.cache.restore(<any>state);
   }
 
   // getter used to ensure apollo has been initialised
