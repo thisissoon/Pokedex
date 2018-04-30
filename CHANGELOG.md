@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/thisissoon/Pokedex/compare/v0.5.0...v0.6.0) (2018-04-30)
+
+
+### Bug Fixes
+
+* **server side rendering:** enable initial navigation ([55c6186](https://github.com/thisissoon/Pokedex/commit/55c6186))
+
+
+### Features
+
+* **state transfer:** add dom loaded event listener ([79b9f40](https://github.com/thisissoon/Pokedex/commit/79b9f40))
+* **state transfer:** conditionally take from or store in state transfer object ([38b5c0b](https://github.com/thisissoon/Pokedex/commit/38b5c0b))
+* **state transfer:** import ServerTransferStateModule ([391deaf](https://github.com/thisissoon/Pokedex/commit/391deaf))
+* **state transfer:** install and import TransferHttpCacheModule ([6ee9a1f](https://github.com/thisissoon/Pokedex/commit/6ee9a1f))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/thisissoon/Pokedex/compare/v0.4.0...v0.5.0) (2018-04-23)
 
