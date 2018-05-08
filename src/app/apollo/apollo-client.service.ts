@@ -5,6 +5,7 @@ import { Apollo } from 'apollo-angular';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
 
 import { introspectionQueryResultData } from './fragment-types';
+import { AppConfigService } from '../config/app-config.service';
 
 @Injectable()
 export class ApolloClientService {
@@ -19,7 +20,8 @@ export class ApolloClientService {
   constructor(
     private apolloAngular: Apollo,
     private readonly state: TransferState,
-    private httpLink: HttpLink
+    private httpLink: HttpLink,
+    private appConfig: AppConfigService
   ) { }
 
   init() {
@@ -33,7 +35,8 @@ export class ApolloClientService {
 
     this.cache = new InMemoryCache({ fragmentMatcher });
 
-    this.link = this.httpLink.create({ uri: 'https://graphql-pokemon.now.sh' });
+    // use url from app config service to create http link.
+    this.link = this.httpLink.create({ uri: this.appConfig.config.apiUrl });
 
     this.apolloAngular.create({
       link: this.link,
