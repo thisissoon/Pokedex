@@ -72,6 +72,19 @@ Angular state transfer allows responses received by Angular to be stored in a ke
 3. In `ApolloClientService` either transfer Apollo cache to Angular state or Angular state to Apollo cache depending on wether on server or on browser. This will result in data being visible at bottom of ssr pages.
 4. Finally we need to ensure client app bootstraps after the DOM has loaded (and hence state at bottom of html docs). Add a `document.loaded` event listener in `main.ts` to achieve this.
 
+### Runtime config
+
+Runtime config allows key app configuration options (like API urls) to be decided at runtime as opposed to compile time. This means the app can be compiled and packaged with different config files for different deployments (e.g dev and prod).
+
+This project stores app config as a `.json` file in the assets folder and uses node `fs` or Angular HTTP client (server or browser apps respectfully) to load the app's config pre app bootstrap.
+
+1. Create an `AppConfigService`.
+2. Create an `app-config.json`.
+3. Create a `ConfigLoaderServer` which uses `fs` to read the `app-config.json` and store it's config object in the state transfer object.
+4. Use `ConfigLoaderServer` in a `APP_INITIALIZER` in the `ServerModule` to get the config object and store it on the `AppConfigService`.
+5. Create a `ConfigLoaderBrowser` which checks for the config object in the state transfer object and if not present uses Angular's `HttpCLient` to retrieve `app-config.json`.
+6. Use `ConfigLoaderBrowser` in a `APP_INITIALIZER` in the `BrowserModule` to get the config object and store it on the `AppConfigService`.
+7. Use the `AppConfigService` config object in the `ApolloClientService` to create the `httpLink`.
 
 ## Development server
 
