@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4 and created to demonstrate implementations of a few recently encountered technologies.
 
+These include [Commitizen CLI](https://github.com/commitizen/cz-cli), [standard-version](https://github.com/conventional-changelog/standard-version), [Angular Universal](https://angular.io/guide/universal), [GraphQL](https://graphql.org/learn/), [GraphQL CLI](https://github.com/graphql-cli/graphql-cli), [Apollo](https://www.apollographql.com/docs/angular/basics/setup.html), [Apollo codegen](https://github.com/apollographql/apollo-codegen).
+
 ## Features
 
 Following section titles can be used to search commit history for changes specific to each feature.
@@ -97,6 +99,28 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artefacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+## SSR build
+
+Run `npm run build:ssr` to: 
+
+* build the project for server to be used as an express templating engine
+* build the project for browser to be shipped to the client.
+* build the typescript express server into an executable JavaScript file
+
+The build artefacts will be stored in the `dist/` directory.
+
+## SSR serve
+
+Run `npm run server:ssr` to execute the JavaScript express server in the `/dist` directory. Navigate to `http://localhost:4200/`. The express server will use the server side app as a templating engine and return a fully formed HTML document directly from the server.
+
+## Branch, commit, release
+
+Create git branches as you normally would. Run `npm run commit` to create a commit with commitizen. Run `npm run release` to use standard version to auto generate a CHANGELOG and auto increment project version numbers.
+
+## GraphQL codegen
+
+Run `npm run schema:graphql` to download the Pokemon GraphQL schema. Run `npm run apollo:gen` to introspect the Pokemon GraphQL endpoint and generate response types based on `gql` tagged strings.
 
 ## Further help
 
