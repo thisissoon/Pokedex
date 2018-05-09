@@ -1,0 +1,4 @@
+{
+  "apiUrl": "https://graphql-pokemon.now.sh",
+  "host": "http://localhost:4200"
+}
