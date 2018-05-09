@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/thisissoon/Pokedex/compare/v0.6.0...v0.7.0) (2018-05-09)
+
+
+### Features
+
+* **runtime config:** create app config model ([77f7ea8](https://github.com/thisissoon/Pokedex/commit/77f7ea8))
+* **runtime config:** create app config service ([18ac46f](https://github.com/thisissoon/Pokedex/commit/18ac46f))
+* **runtime config:** create browser side config loader and use in app initializer ([3ccd2a1](https://github.com/thisissoon/Pokedex/commit/3ccd2a1))
+* **runtime config:** create json app config file ([9bb68ad](https://github.com/thisissoon/Pokedex/commit/9bb68ad))
+* **runtime config:** create server side config loader and use in app initializer ([88ed821](https://github.com/thisissoon/Pokedex/commit/88ed821))
+* **runtime config:** use app config in apollo client initialisation ([583655c](https://github.com/thisissoon/Pokedex/commit/583655c))
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/thisissoon/Pokedex/compare/v0.5.0...v0.6.0) (2018-04-30)
 
