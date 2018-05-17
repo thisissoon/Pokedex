@@ -46,15 +46,18 @@ For the most part [this guide](https://angular.io/guide/universal) can be follow
 
 Once the above is completed `npm run build:ssr` and `npm run serve:ssr` can be run and when `http://localhost:4000/` is visited the initial request in chrome dev tools should contain a fully rendered HTML page as opposed to a pre Angular bootstrap one.
 
-### GraphQL codegen (schema types, query autocompletion, query result types)
+### GraphQL codegen (schema types, query autocompletion, query result types, mock data)
 
 It is possible to inspect a GraphQL endpoint for it's schema with [GraphQL CLI](https://github.com/graphql-cli/graphql-cli). This schema can then be used by [GraphQL for VScode](https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode) to lint and autocomplete [gql tagged](https://github.com/apollographql/graphql-tag) queries. Furthermore, given these correctly typed queries, it is possible to generate response types with [Apollo codegen](https://github.com/apollographql/apollo-codegen).
+
+The above types can also be used to type check low level component mock data which can then be composed for routed component mock data.
 
 1. Install [GraphQL for VScode](https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode) and copy this project's `.gqlconfig' to loosen the GraphQL linter.
 2. Run `npm i --save graphql-tag` and create fragments for each nested component and queries for each routed component (see this project's Pokemon fragments and queries)
 3. Use the GraphQL CLI to download GraphQL schema. Run `npm i --save-dev graphql-cli`, add `"schema:gql": "graphql get-schema -e https://graphql-pokemon.now.sh -o ./schema.graphql",` to your `package.json` and run `npm run schema:gql`. Remove all comments from the generated schema file.
 4. The GraphQL for VScode plugin should now provide some linting and autocompletion for gql tagged strings. If not, check `schema.graphql` from errors and restart VScode.
 5. Use Apollo codegen to create query response types based on an introspection schema and gql tagged strings.
+6. Use fragment types to type check mock data at component level (e.g pokemon name) and query types compose this mock data at the routed component level.
 
 ### Apollo
 
