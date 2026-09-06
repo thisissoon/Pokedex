@@ -59,7 +59,7 @@
     "codelyzer": "^4.0.1",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
-    "graphql-cli": "^2.15.9",
+    "graphql-cli": "^4.1.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",
